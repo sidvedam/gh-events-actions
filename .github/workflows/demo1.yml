@@ -7,6 +7,13 @@ on:
   workflow_dispatch:
     # keep the colon even though there is no specific configuration
   #not all pushes should trigger the workflow 
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
