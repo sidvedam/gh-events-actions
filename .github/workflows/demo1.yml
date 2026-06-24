@@ -1,5 +1,12 @@
 name: Events Demo 1
-on: ...
+on:
+  pull_request:
+    types:
+      - opened
+
+  workflow_dispatch:
+    # keep the colon even though there is no specific configuration
+  #not all pushes should trigger the workflow 
 jobs:
   deploy:
     runs-on: ubuntu-latest
